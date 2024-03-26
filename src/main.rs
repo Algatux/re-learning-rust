@@ -1,9 +1,20 @@
-
+use std::io;
 
 fn main() {
-    let tup: (&str, u8) = ("red", 255);
-    println!("{} - {}", tup.0, tup.1);
+    let array = [1, 2, 3, 4, 5];
 
-    let (color, value) = tup;
-    println!("{} - {}", color, value)
+    println!("Please enter an array index between 0..4 :");
+
+    let mut index = String::new();
+
+    io::stdin()
+        .read_line(&mut index)
+        .expect("Failed to read line!");
+
+    let index: usize = index
+        .trim()
+        .parse()
+        .expect("Not a number!");
+
+    println!("The value of the element at index {} is : {}", index, array[index]);
 }
