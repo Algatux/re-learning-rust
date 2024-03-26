@@ -1,24 +1,34 @@
-use std::io;
-
-fn read_index() -> usize {
-    let mut index = String::new();
-
-    io::stdin()
-        .read_line(&mut index)
-        .expect("Failed to read line!");
-
-    index
-        .trim()
-        .parse()
-        .expect("Not a number!")
-}
 
 fn main() {
     let array = [1, 2, 3, 4, 5];
 
-    println!("Please enter an array index between 0..4 :");
+    let mut index: usize = 0;
 
-    let index = read_index();
+    println!("loop");
+    loop {
+        println!("array element: {}", array[index]);
 
-    println!("The value of the element at index {} is : {}", index, array[index]);
+        index += 1;
+
+        if index == 5 {
+            break;
+        }
+    }
+
+    println!("while");
+    index = 0;
+    while index < 5 {
+        println!("array element: {}", array[index]);
+        index += 1;
+    }
+
+    println!("for range");
+    for number in 0..4 {
+        println!("array element: {}", array[number]);
+    }
+
+    println!("for values");
+    for value in array {
+        println!("array element: {}", value);
+    }    
 }
