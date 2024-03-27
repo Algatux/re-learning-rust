@@ -1,34 +1,19 @@
+use std::io;
+
 
 fn main() {
-    let array = [1, 2, 3, 4, 5];
+    let mut name: String = String::new();
 
-    let mut index: usize = 0;
+    println!("Please insert your name: ");
 
-    println!("loop");
-    loop {
-        println!("array element: {}", array[index]);
+    io::stdin()
+        .read_line(&mut name)
+        .expect("Impossible to read line");
 
-        index += 1;
+    greeter(&mut name);
+} 
 
-        if index == 5 {
-            break;
-        }
-    }
 
-    println!("while");
-    index = 0;
-    while index < 5 {
-        println!("array element: {}", array[index]);
-        index += 1;
-    }
-
-    println!("for range");
-    for number in 0..4 {
-        println!("array element: {}", array[number]);
-    }
-
-    println!("for values");
-    for value in array {
-        println!("array element: {}", value);
-    }    
+fn greeter(name: &mut String) {
+    println!("Hello, {}", name)
 }
