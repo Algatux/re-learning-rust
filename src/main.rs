@@ -1,19 +1,9 @@
-use std::io;
 
 
 fn main() {
-    let mut name: String = String::new();
+    let s: String = String::from("hello world");
 
-    println!("Please insert your name: ");
+    let slice: &str = &s[..5];
 
-    io::stdin()
-        .read_line(&mut name)
-        .expect("Impossible to read line");
-
-    greeter(&mut name);
+    println!("Slice {}", slice);
 } 
-
-
-fn greeter(name: &mut String) {
-    println!("Hello, {}", name)
-}
