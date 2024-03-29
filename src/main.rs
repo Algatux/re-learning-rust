@@ -1,9 +1,17 @@
 
 
+struct User {
+    name: String,
+    email: String,
+    age: u8
+}
+
 fn main() {
-    let s: String = String::from("hello world");
+    let user = User{
+        name: String::from("Alessandrio"),
+        email: String::from("fake@email.com"),
+        age: 38
+    };
 
-    let slice: &str = &s[..5];
-
-    println!("Slice {}", slice);
+    println!("Name: {}, Email: {}, Age {}", user.name, user.email, user.age);
 } 
