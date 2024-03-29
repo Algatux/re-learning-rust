@@ -1,9 +1,20 @@
 
 
-struct RGBColor(u8, u8, u8);
+#[derive(Debug)]
+struct Person{
+    name: String,
+    surname: String
+}
 
 fn main() {
-    let red = RGBColor(255,0,0);
+    let ale:Person = Person {
+        name: String::from("Alessandro"),
+        surname: String::from("Galli") 
+    };
 
-    print!("{}, {}, {}", red.0, red.1, red.2)
+    dbg!(&ale);
+
+    println!("name: {}, surname: {}", ale.name, ale.surname);
+    println!("Person: {:?}", ale);
 }
+
